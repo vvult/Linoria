@@ -93,7 +93,6 @@ function ESP:Toggle(bool)
                 for _, component in pairs(box.Components) do
                     if component.Visible then
                         component.Visible = false
-                        component:Remove()
                     end
                 end
             end
