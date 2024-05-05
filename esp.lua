@@ -91,12 +91,16 @@ function ESP:Toggle(bool)
             else
                 -- Hide the ESP box
                 for _, component in pairs(box.Components) do
-                    component.Visible = false
+                    if component.Visible then
+                        component.Visible = false
+                        component:Remove()
+                    end
                 end
             end
         end
     end
 end
+
 
 function ESP:GetBox(obj)
     return self.Objects[obj]
